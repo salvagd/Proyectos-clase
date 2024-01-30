@@ -1,0 +1,83 @@
+
+    .arriba{
+      height:5%;
+      width:100%;
+      background-color: blueviolet;
+      position: absolute;
+    }
+    .izquierda{
+      width: 25%;
+      margin-left: 1.5%;
+      background-color: red;
+      height:60%;;
+      position: absolute;
+      top: 7%;
+
+  }
+    .derecha1{
+      width:35%;
+      height:30%;
+      position:absolute;
+      background-color: green;
+      left:90%;
+      top: 7%;
+  }
+  .derecha2{
+      width:35%;
+      height:30%;
+      position:absolute;
+      left:90%;
+      background-color: blue;
+      top: 38%;
+  }
+
+  .botoncito{
+      width:38%;
+      height:17%;
+      left:48%;
+      top:10%;
+      position: absolute;
+  }
+  /*.arriba{
+    height:5%;
+    width:100%;
+    background-color: blueviolet;
+    position: absolute;
+}
+.izquierda, .derecha1, .derecha2{
+    width: 100%;
+    margin-left: 0;
+    right:0;
+    background-color: red;
+    height:200px;
+    position: absolute;
+}
+.izquierda{
+  width: 25%;
+  margin-left: 1.5%;
+  background-color: red;
+  height:60%;;
+  position: absolute;
+  top: 7%;
+}
+.derecha1{
+  width:35%;
+  height:30%;
+  position:absolute;
+  background-color: green;
+  left:90%;
+  top: 7%;
+}
+
+.derecha2{
+    top: 490px;
+    background-color: blue;
+}
+.botoncito{
+    width:38%;
+    height:170px;
+    left:48%;
+    top:10%;
+    position: absolute;
+}*/
+

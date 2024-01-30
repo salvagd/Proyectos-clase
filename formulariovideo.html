@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <form target="_self" action="resultado1.html">
+        <h1 style="margin-left:350px; color:yellow;">Equipo que crees que va a ganar la final</h1>
+        <fieldset><div id="letras">
+        <input type="checkbox" id="equipo1" name="Equipo" value="t1" onclick="mostrart1()">
+        <label for="equipo1" id="equip1">T1</label>
+        <input type="checkbox" id="equipo2" name="Equipo" value="wbg" onclick="mostrarwbg()">
+        <label for="equipo2" id="equip2">WBG</label>
+    </div>
+        </fieldset>        
+        <fieldset  id="campo1"style="display:none"><div id="letras">Seleccionar Jugador para ver highlightes<br>
+            <input type="checkbox" id="top1" name="jugador" value="zeus"onclick="jugadort1()">
+            <label for="top1">Zeus</label>
+            <input type="checkbox" id="jungla1" name="jugador" value="oner" onclick="jugadort1()">
+            <label for="jungla1">Oner</label>
+            <input type="checkbox" id="mid1" name="jugador" value="faker"onclick="jugadort1()">
+            <label for="mid1">Faker</label>
+            <input type="checkbox" id="adc1" name="jugador" value="gumayusi"onclick="jugadort1()">
+            <label for="adc1">Gumayusi</label>
+            <input type="checkbox" id="supp1" name="jugador" value="keria"onclick="jugadort1()">
+            <label for="supp1">Keria</label>
+        </div>
+        </fieldset>
+        <fieldset id="campo2" style="display:none"><div id="letras">Seleccionar Jugador para ver highlightes <br>
+            <input type="checkbox" id="top2" name="jugador" value="theshy" onclick="jugadorwbg()">
+            <label for="top2">TheShy</label>
+            <input type="checkbox" id="jungla2" name="jugador" value="weiwei" onclick="jugadorwbg()">
+            <label for="jungla2">Weiwei</label>
+            <input type="checkbox" id="mid2" name="jugador" value="xiahou" onclick="jugadorwbg()">
+            <label for="mid2">Xiahou</label>
+            <input type="checkbox" id="adc2" name="jugador" value="light" onclick="jugadorwbg()">
+            <label for="adc2">Light</label>
+            <input type="checkbox" id="supp2" name="jugador" value="crisp" onclick="jugadorwbg()">
+            <label for="supp2">Crisp</label>
+        </div>
+        </fieldset>
+
+        <video src="zeus.mp4" type="video/mp4" style="display:none; margin-left:350px;" id="playtop1" controls autoplay muted></video>
+        <video src="oner.mp4" type="video/mp4" style="display:none; margin-left:350px;" id="playjungla1"  controls autoplay muted></video>
+        <video src="faker.mp4" type="video/mp4" style="display:none; margin-left:350px;" id="playmid1"  controls autoplay muted></video>
+        <video src="gumayusi.mp4" type="video/mp4" style="display:none; margin-left:350px;" id="playadc1"  controls autoplay muted></video>
+        <video src="keria.mp4" type="video/mp4" style="display:none; margin-left:350px;" id="playsupp1"  controls autoplay muted></video>
+        <video src="theshy.mp4" type="video/mp4" style="display:none; margin-left:350px;" id="playtop2"  controls autoplay muted></video>
+        <video src="weiwei.mp4"  type="video/mp4" style="display:none; margin-left:350px;" id="playjungla2"  controls autoplay muted></video>
+        <video src="xiahou.mp4"  type="video/mp4" style="display:none; margin-left:350px;" id="playmid2"  controls autoplay muted></video>
+        <video src="light.mp4"  type="video/mp4" style="display:none; margin-left:350px;" id="playadc2"  controls autoplay muted></video>
+        <video src="crisp.mp4"  type="video/mp4" style="display:none; margin-left:350px;" id="playsupp2"  controls autoplay muted></video>
+        <button type="submit"  id ="submit" style="margin-left:650px;" onclick="enviar()">Enviar</button>
+    </form>
+    <style type="text/css">
+        body{
+            background-image:url(202342410514976_1.jpg) ;
+            background-size:cover ;
+        }
+        #letras{
+            color:white;
+        }
+        </style>
+    <script>
+        let equip1 = document.getElementById('equipo1');
+        let equip2 = document.getElementById('equipo2');
+        let texto1 = document.getElementById('equip1');
+        let texto2 = document.getElementById('equip2');
+        let campo1 = document.getElementById('campo1');
+        let campo2 = document.getElementById('campo2');
+        let top1 = document.getElementById('top1');
+        let top2 = document.getElementById('top2');
+        let jungla1 = document.getElementById('jungla1');
+        let jungla2 = document.getElementById('jungla2');
+        let mid1 = document.getElementById('mid1');
+        let mid2 = document.getElementById('mid2');
+        let adc1 = document.getElementById('adc1');
+        let adc2 = document.getElementById('adc2');
+        let supp1 = document.getElementById('supp1');
+        let supp2 = document.getElementById('supp2');
+        let playtop1 = document.getElementById('playtop1');
+        let playtop2 = document.getElementById('playtop2');
+        let playjungla1 = document.getElementById('playjungla1');
+        let playjungla2 = document.getElementById('playjungla2');
+        let playmid1 = document.getElementById('playmid1');
+        let playmid2 = document.getElementById('playmid2');
+        let playadc1 = document.getElementById('playadc1');
+        let playadc2 = document.getElementById('playadc2');
+        let playsupp1 = document.getElementById('playsupp1');
+        let playsupp2 = document.getElementById('playsupp2');
+        function mostrart1(){
+            if(equip1.checked == true){
+                equip2.style.display = 'none';
+                texto2.style.display = 'none';
+                campo1.style.display = 'block';
+                top1.style.visibility = 'visible';
+                jungla1.style.visibility = 'visible';
+                mid1.style.visibility = 'visible';
+                acd1.style.visibility = 'visible';
+                supp1.style.visibility = 'visible';
+            }
+            
+        }
+        function mostrarwbg(){
+            if(equip2.checked == true){
+                equip1.style.display = 'none';
+                texto1.style.display = 'none';
+                campo2.style.display = 'block';
+                top2.style.visibility= 'visible';
+                jungla2.style.visibility = 'visible';
+                mid2.style.visibility = 'visible';
+                acd2.style.visibility = 'visible';
+                supp2.style.visibility = 'visible';
+            }
+        }
+        function jugadort1(){
+        if(top1.checked == true){
+                playtop1.style.display = 'block';
+        }else if(jungla1.checked == true){
+            playjungla1.style.display = 'block';
+        }else if(mid1.checked == true){
+            playmid1.style.display = 'block';
+        }else if(adc1.checked == true){
+            playadc1.style.display = 'block';
+        }else if(supp1.checked == true){
+            playsupp1.style.display = 'block';
+        }
+    }
+    function jugadorwbg(){
+        if(top2.checked == true){
+            playtop2.style.display = 'block';
+    }else if(jungla2.checked == true){
+        playjungla2.style.display = 'block';
+    }else if(mid2.checked == true){
+        playmid2.style.display = 'block';
+    }else if(adc2.checked == true){
+        playadc2.style.display = 'block';
+    }else if(supp2.checked == true){
+        playsupp2.style.display = 'block';
+    }
+}
+function enviar(){
+    if(equip1.checked == true){    
+    document.location.href("resultado1.html");
+    }else{
+    document.location.href("resultado2.html");
+    }
+}
+    </script>
+</body>
+</html>
