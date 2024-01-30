@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="">
+  <input type="checkbox" id="checkbox1" name="checkbox1" value="Checkbox1" onclick="onlyOneCheckbox(this)">
+  <label for="checkbox1"> Checkbox 1</label><br>
+  <input type="checkbox" id="checkbox2" name="checkbox2" value="Checkbox2" onclick="onlyOneCheckbox(this)">
+  <label for="checkbox2"> Checkbox 2</label><br>
+</form>
+
+<script>
+function onlyOneCheckbox(checkbox) {
+    var checkboxes = document.getElementsByName('checkbox1', 'checkbox2')
+    checkboxes.forEach((item) => {
+        if (item !== checkbox) item.disabled = item.checked
+    })
+}
+</script>
+
+</body>
+</html>
+

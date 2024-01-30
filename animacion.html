@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #cubo {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 50px;
+            top:100px;
+            transition: transform 0.1s linear;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<div id="cubo"></div>
+
+<script>
+    var cubo = document.getElementById('cubo');
+    var positionX = 0;
+    var positionY = 0;
+    var rotation = 0;
+    var intervalId;
+
+    function movercubo() {
+        cubo.style.transform = 'translate(' + positionX + 'px, ' + positionY + 'px) rotate(' + rotation + 'deg)';
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (intervalId) {
+            clearInterval(intervalId);
+        }
+        switch (event.key) {
+            case 'w':
+                intervalId = setInterval(function() {
+                    positionY -= 50;
+                    movercubo();
+                }, 100);
+                break;
+            case 'a':
+                intervalId = setInterval(function() {
+                    positionX -= 50;
+                    movercubo();
+                }, 100);
+                break;
+            case 's':
+                intervalId = setInterval(function() {
+                    positionY += 50;
+                    movercubo();
+                }, 100);
+                break;
+            case 'd':
+                intervalId = setInterval(function() {
+                    positionX += 50;
+                    movercubo();
+                }, 100);
+                break;
+            case ' ':
+                intervalId = setInterval(function() {
+                    rotation += 50;
+                    movercubo();
+                }, 100);
+                break;
+        }
+    });
+
+    document.addEventListener('keyup', function(event) {
+        if (intervalId) {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Json</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+// Datos de los libros en una variable en un json
+var data = {
+    "libros": [
+      {
+        "titulo": "El Gran Gatsby",
+        "autor": "F. Scott Fitzgerald",
+        "publicacion": 1925,
+        "genero": "Novela",
+        "disponible": true
+      },
+      {
+        "titulo": "Cien años de soledad",
+        "autor": "Gabriel García Márquez",
+        "publicacion": 1967,
+        "genero": "Realismo mágico",
+        "disponible": true
+      },
+      {
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "publicacion": 1949,
+        "genero": "Distopía",
+        "disponible": false
+      }
+    ]
+  };
+  
+  // Función para buscar un libro por título
+  function buscarLibro(titulo) {
+    for (var i = 0; i < data.libros.length; i++) {
+      if (data.libros[i].titulo.toLowerCase() === titulo.toLowerCase()) {
+        return data.libros[i];
+      }
+    }
+    return null;
+  }
+  
+  // Función para manejar la entrada del usuario
+  function manejarEntrada() {
+    var titulo = prompt("Por favor, introduce el título del libro:");
+    var libro = buscarLibro(titulo);
+    
+    if (libro) {
+      alert("Título: " + libro.titulo + "\nAutor: " + libro.autor + "\nPublicación: " + libro.publicacion + "\nGénero: " + libro.genero + "\nDisponible: " + (libro.disponible ? 'Sí' : 'No'));
+    } else {
+      alert("Libro no encontrado");
+    }
+  }
+  
+  // Llama a la función para iniciar el programa
+  manejarEntrada();  
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Barra de navegación con Bootstrap</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Inicio</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="#" onclick="mostrarContenido()">Mostrar contenido del array</a></li>
+        <li><a href="#" onclick="ordenarInversamente()">Mostrar array ordenado inversamente</a></li>
+        <li><a href="#" onclick="anadirNumeroNuevo()">Añadir un número nuevo al principio del array</a></li>
+        <li><a href="#" onclick="filtrarValores()">Filtrar valores en el array según el valor medio de todos los números</a></li>
+        <li><a href="#" onclick="aplicarPropiedades()">Aplicar cualquier propiedad de los arrays</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div id="contenido"></div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    const x = [45, 56, 12, 5, 1, 66];
+
+    function mostrarContenido() {
+      document.getElementById("contenido").innerHTML = x.join(", ");
+    }
+
+    function ordenarInversamente() {
+      x.reverse();
+      document.getElementById("contenido").innerHTML = x.join(", ");
+    }
+
+    function anadirNumeroNuevo() {
+      x.unshift(100);
+      document.getElementById("contenido").innerHTML = x.join(", ");
+    }
+
+    function filtrarValores() {
+      const media = x.reduce((a, b) => a + b) / x.length;
+      const filtrados = x.filter((num) => num > media);
+      document.getElementById("contenido").innerHTML = filtrados.join(", ");
+    }
+
+    function aplicarPropiedades() {
+      const longitud = x.length;
+      const suma = x.reduce((a, b) => a + b);
+      const promedio = suma / longitud;
+      const maximo = Math.max(...x);
+      const minimo = Math.min(...x);
+      document.getElementById("contenido").innerHTML = `Longitud del array: ${longitud}<br>Promedio de los números en el array: ${promedio}<br>Valor máximo en el array: ${maximo}<br>Valor mínimo en el array: ${minimo}`;
+    }
+  </script>
+</body>
+</html>
